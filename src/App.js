@@ -1,21 +1,31 @@
+import React from 'react';
 import './App.css';
 import { Routes, Route, useNavigate } from "react-router-dom";
+import Particles from "react-tsparticles";
+import { loadFireflyPreset } from "tsparticles-preset-firefly";
+import Navbar from "./components/Navbar";
+
+
+function particlesInit(tsParticles) {
+
+  loadFireflyPreset(tsParticles);
+}
 
 function App() {
   return (
     <div className="App">
-      <div class="page-bg"></div>
-
-      <div class="animation-wrapper">
-        <div class="particle particle-1"></div>
-        <div class="particle particle-2"></div>
-        <div class="particle particle-3"></div>
-        <div class="particle particle-4"></div>
-      </div>
-
-      <div class="page-wrapper">
-        <h4>CSS Particles</h4>
-      </div>
+      <Navbar />
+      <Particles id="tsparticles"
+        init={particlesInit}
+        options={{
+          preset: "firefly",
+          background: {
+            color: {
+              value: "#021027"
+            }
+          }
+        }}
+      />
     </div>
   );
 }
