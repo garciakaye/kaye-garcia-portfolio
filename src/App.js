@@ -1,21 +1,27 @@
 import React from 'react';
-import './App.css';
-import { Routes, Route, useNavigate } from "react-router-dom";
+import "./styles/App.css"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Particles from "react-tsparticles";
 import { loadFireflyPreset } from "tsparticles-preset-firefly";
 import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Home from "./components/Home";
+import Projects from "./components/Projects";
 
 
-function particlesInit(tsParticles) {
+// function particlesInit(tsParticles) {
 
-  loadFireflyPreset(tsParticles);
-}
+//   loadFireflyPreset(tsParticles);
+// }
 
 function App() {
+
   return (
-    <div className="App">
+    <Router>
       <Navbar />
-      <Particles id="tsparticles"
+      <Home />
+      <About />
+      {/* <Particles id="tsparticles"
         init={particlesInit}
         options={{
           preset: "firefly",
@@ -25,8 +31,13 @@ function App() {
             }
           }
         }}
-      />
-    </div>
+      /> */}
+      {/* <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes> */}
+    </Router>
   );
 }
 
