@@ -1,0 +1,29 @@
+#navbar {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px 12px 0px 12px;
+  margin: 8px;
+  z-index: 2;
+  font-weight: bolder;
+  min-width: 97%;
+}
+
+.my-name {
+  float: left;
+  display: inline;
+}
+
+#navbar a {
+  display: inline;
+  justify-content: center;
+  color: var(--mywhite);
+  font-size: 15px;
+  text-align: center;
+  padding: 8px;
+  margin-left: 8px;
+  text-decoration: none;
+}
